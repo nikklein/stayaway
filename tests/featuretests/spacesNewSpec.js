@@ -29,4 +29,21 @@ describe('New Spaces Page', function() {
       assert.equal(this.browser.html("body").to.contain(9));
     });
   });
+  it('allows user to enter the dates', function(){
+    assert.ok(this.browser.success);
+    this.browser
+    .fill('name', 'the shard')
+    .fill('description', 'massive mate')
+    .fill('price', 9)
+    .fill('availibleFrom', 08/15/2016)
+    .fill('availibleTo', 08/18/2016)
+    .pressButton('Submit');
+    this.browser.wait().then(function(){
+      assert.equal(this.browser.html("body").to.contain("the shard"));
+      assert.equal(this.browser.html("body").to.contain("massive"));
+      assert.equal(this.browser.html("body").to.contain(9));
+      assert.equal(this.browser.html("body").to.contain(08/15/2016));
+      assert.equal(this.browser.html("body").to.contain(08/18/2016));
+    });
+    });
 });

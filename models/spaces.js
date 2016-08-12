@@ -6,7 +6,9 @@ var Space = thinky.createModel("spaces", {
   name: String,
   description: String,
   price: Number,
-  userId: String
+  userId: String,
+  availibleFrom: Date,
+  availibleTo: Date
 });
 
 Space.create = function(req, res) {
@@ -14,8 +16,10 @@ Space.create = function(req, res) {
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
-    userId: req.body.userId
-  });
+    userId: req.body.userId,
+    availibleFrom: req.body.availibleFrom,
+    availibleTo: req.body.availibleTo
+    });
 };
 
 module.exports = Space;

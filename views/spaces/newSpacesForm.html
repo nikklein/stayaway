@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.css">
 </head>
 <body>
   <form action="/spaces/new" method="post">
@@ -12,7 +13,21 @@
     <input type="text" name="description" placeholder="space description" id="description">
     <label for="price">Price Per Night</label>
     <input type="text" name="price" placeholder="price per night" id="price">
+    <label for="availibleFrom">Availible From</label>
+    <input type="text" name="availibleFrom" placeholder="Availible From" id="availibleFrom">
+    <label for="availibleFrom">Availible To</label>
+    <input type="text" name="availibleTo" placeholder="Availible To" id="availibleTo">
     <input type="submit" value="Submit">
   </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+  <script>
+    $( function() {
+      $( "#availibleFrom" ).datepicker();
+    } );
+    $( function() {
+      $( "#availibleTo" ).datepicker();
+    } );
+    </script>
 </body>
 </html>
