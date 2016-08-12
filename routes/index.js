@@ -24,6 +24,11 @@ router.get('/spaces', function(req, res, next){
 
 });
 
+router.get('spaces/:id', function(req, res, next){
+  var id = req.query.id;
+  console.log(id);
+  res.render('spaces/:id', {title: 'Personal page'});
+});
 // router.get('/list', function(req, res, next){
 //   res.render('/spaces/list', {title: 'Spaces'});
 // });

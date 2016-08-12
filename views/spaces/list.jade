@@ -3,10 +3,9 @@ block content
   h1= title
 
   p Thanks for adding your property you mug!
-
   div(class='spaces')
    each val in spaces
       div(id='space-listing')
-        div(id='space-name')= val.name
+        a(id='space-name', href = '/spaces/' + val.id)= val.name
         div(id='space-description')= val.description
         div(id='space-price')= '£' + val.price +'.00 per night'
